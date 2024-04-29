@@ -1,0 +1,18 @@
+Solution 1
+class Solution {
+    public int maxProfit(int[] prices) {
+        int buy =prices[0];
+        int profit=0;
+        for(int i =0; i<prices.length; i++){
+            buy = prices[i]<buy? prices[i]:buy;
+            profit = prices[i]-buy>profit? prices[i]-buy : profit;
+        }
+
+        return profit;
+    }
+}
+
+Adaptation of Kadane's Algorithm:
+Kadane's algorithm is typically used to find the maximum sum of a contiguous subarray within a one-dimensional numeric array. In this case, the logic is adapted to find the maximum difference (profit) between elements in the array (prices).
+The core idea of Kadane's algorithm used here is to maintain two variables (buy and profit) to keep track of the minimum encountered value (potential buy price) and the maximum difference (profit) encountered during the traversal of the prices array.
+By iterating through the array and updating buy and profit accordingly, the algorithm efficiently determines the maximum profit that can be achieved from buying and selling the stock based on historical prices.
