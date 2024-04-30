@@ -8,6 +8,6 @@ class Solution {
         for(String str : word2){
             stringBuilder1.append(str);
         }
-                return stringBuilder.toString().equals(stringBuilder1.toString());
+                return stringBuilder.toString().equals(stringBuilder1.toString()); 
     }
 }
