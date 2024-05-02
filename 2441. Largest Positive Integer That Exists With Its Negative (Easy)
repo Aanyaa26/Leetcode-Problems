@@ -1,0 +1,56 @@
+BRUT FORCE 1
+
+class Solution {
+    public int findMaxK(int[] nums) {
+        int max = -1;
+        for(int i=0; i<nums.length; i++){
+            for(int j=i+1; j<nums.length; j++){
+                if (nums[i] ==-nums[j]){
+                    if (nums[i]>max || nums[j]>max){
+                        max = Math.max(max,Math.max(nums[i], nums[j]));
+                    }
+                }
+            }
+        }
+        return max;
+    }
+}
+
+BRUT FORCE 2
+
+
+class Solution {
+    public int findMaxK(int[] nums) {
+int max = -1;
+        for(int i=0; i<nums.length; i++){
+            for(int j=i+1; j<nums.length; j++){
+                if (nums[i]+nums[j] == 0){
+               max = Math.max(max,Math.abs(nums[i]));
+                }                
+                
+            }
+        }
+        return  max;
+    }
+}
+
+
+OPTIMISED
+
+
+class Solution {
+    public int findMaxK(int[] nums) {
+        int check[]=new int[1001];
+        int max=-1;  //[-1,10,6,7,-7,1]
+        for(int x:nums){
+            int idx=x > 0 ? x : -x;
+            if(check[idx]!=x){
+                check[idx]+=x;
+            }
+            if(check[idx]==0){
+                max = max > idx ? max : idx;
+            }
+        }
+        return max;
+    }
+}
