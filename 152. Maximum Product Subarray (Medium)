@@ -1,0 +1,21 @@
+KEDANE'S ALGORITHM 
+
+class Solution {
+    public int maxProduct(int[] nums) {
+        if (nums== null|| nums.length==0){
+            return 0;
+        }
+        int max_product =nums[0];
+        int current_maximum = nums[0];
+        int current_minimum = nums[0];
+        for(int i =1; i<nums.length; i++){
+            int temp = current_maximum;
+            current_maximum = Math.max(nums[i],Math.max(current_maximum*nums[i],current_minimum*nums[i]));
+            current_minimum = Math.min(nums[i],Math.min(temp*nums[i],current_minimum*nums[i]));
+            max_product=Math.max(max_product,current_maximum);
+        }
+        return max_product;
+
+
+    }
+}
