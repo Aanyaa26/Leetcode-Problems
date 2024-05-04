@@ -1,0 +1,37 @@
+Optimised Approach
+class Solution {
+    public int totalMoney(int n) {
+        int start=1;
+        int incr=0;
+        int total=0;
+        for(int i=1;i<=n;i++){
+            total+=(start+incr);
+            incr++;
+            if(i%7==0){
+                start++;
+                incr=0;
+            }
+        }
+        return total;
+
+
+Approach 2
+        int money[]={1,3,6,10,15,21,28};
+        int total=0;
+        int incr=0;
+        while(n>0){
+            if(n<8){
+                total+=money[n-1];
+                total+=incr*n;
+                n=0;
+            }
+            else{
+                total+=money[6];
+                total+=incr*7;
+                incr++;
+                n=n-7;
+            }
+        }
+        return total;
+    }
+}
