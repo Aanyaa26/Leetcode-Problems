@@ -3,7 +3,7 @@ class Solution {
         int n = ratings.length;
         if (n == 0) return 0;
         
-        // Step 1: Initialize candy array
+        // Step 1: Initialize candy array 
         int[] candies = new int[n];
         Arrays.fill(candies, 1); // Each child gets at least one candy
         
