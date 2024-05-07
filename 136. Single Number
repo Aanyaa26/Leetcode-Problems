@@ -1,0 +1,9 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        int value=0;
+        for (int i=0; i<nums.length;i++){
+            value=value^nums[i]; // XOR OPERATOR: RETURNS 0 ON SAME VALUE AND 1 FOR DIFFERENT
+        }
+        return value; // ANYTHING XOR BY 0 IS THE NUMBER ITSELF
+    }
+}
