@@ -1,0 +1,20 @@
+class Solution {
+    public long maximumHappinessSum(int[] happiness, int k) {
+        Arrays.sort(happiness);
+
+        long sum =0;
+        int n = happiness.length;
+        int i = 1;
+        int selected = 0;
+        while(k>0){
+           int h = happiness[n-i]> selected?happiness[n-i]- selected:0;
+            sum += h;
+            i++;
+            k--; 
+            selected ++;
+        }
+        return sum;
+        
+        
+    }
+}
