@@ -1,0 +1,20 @@
+class Solution {
+    public double solve(double x, long n){
+        if (n==0){
+            return 1; // base case i.e anything raise to power 0 is 1
+        }
+        if (n<0){
+            return solve(1/x,-n); // if the power is in negative, convert it into reciprocal
+        }
+        if (n%2==0){
+            return solve(x*x,n/2); // if the power is even - it reduces the number of multiplication (Binary exponents)
+        } // the both even and odd are written in that way because if we multiply directly it would require more steps and may throw an error.
+        else{
+            return x*solve(x*x, n/2); // if the power is odd - an additional x will get multiplied to the even solution 
+        }
+    }
+    public double myPow(double x, int n) {
+        return solve(x, (long)n); // main function will return accordingly!
+        
+    } // ----no loop used, done using recursion! ----
+}
