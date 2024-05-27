@@ -9,7 +9,7 @@ class Solution {
             }
             if (nums[i] - current_element > max_difference) {
                 max_difference = nums[i] - current_element;
-            }
+            } 
         }
         
 
