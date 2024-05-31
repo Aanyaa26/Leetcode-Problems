@@ -1,6 +1,6 @@
 OPTIMISED APPROACH
 A VERY GOOD QUESTION TO BE PRACTICED!
-
+ 
 class Solution {
 
     boolean isVowel(char c) {
