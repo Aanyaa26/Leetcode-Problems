@@ -1,0 +1,33 @@
+OPTIMISED APPROACH
+A VERY GOOD QUESTION TO BE PRACTICED!
+
+class Solution {
+
+    boolean isVowel(char c) {
+        return (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+    }
+
+    public String reverseVowels(String s) {
+        char[] s1=s.toCharArray();
+        int i = 0;
+        int j = s.length() - 1;
+        while (i < j) {
+            while(! isVowel(s1[i]) && i<j){
+                i++;
+            }
+            while(!isVowel(s1[j]) && j>i){
+                j--;
+            }
+            if(i<j){
+                char c2=s1[i];
+                s1[i]=s1[j];
+                s1[j]=c2;
+                i++;
+                j--;
+            }
+        }
+        return String.valueOf(s1);
+
+    }
+
+}
