@@ -1,0 +1,27 @@
+class Solution {
+    public int scoreOfString(String s) {
+        // Initialize score to 0
+        int score = 0;
+        
+        // Return 0 if the string is empty or has only one character
+        if (s == null || s.length() <= 1) {
+            return score;
+        }
+        
+        // Loop through the string starting from the second character
+        for (int i = 1; i < s.length(); i++) {
+            // Get the current character and the previous character
+            char currentChar = s.charAt(i);
+            char prevChar = s.charAt(i - 1);
+            
+            // Calculate the absolute difference in ASCII values
+            int asciiDiff = Math.abs((int) currentChar - (int) prevChar);
+            
+            // Add the difference to the score
+            score += asciiDiff;
+        }
+        
+        // Return the final score
+        return score;
+    }
+}
