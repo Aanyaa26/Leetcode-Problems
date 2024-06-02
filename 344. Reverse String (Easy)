@@ -1,0 +1,26 @@
+class Solution {
+    public void reverseString(char[] s) {
+        // Initialize two pointers, one starting from the beginning (left)
+        // and one from the end (right) of the array.
+        int left = 0;
+        int right = s.length - 1;
+        
+        // Continue swapping while left index is less than right index
+        while (left < right) {
+            // Store the current character at left pointer in a temporary variable
+            char temp = s[left];
+            
+            // Swap the character at left pointer with the character at right pointer
+            s[left] = s[right];
+            
+            // Assign the temporary variable's value to the right pointer's position
+            s[right] = temp;
+            
+            // Move the left pointer one step to the right
+            left++;
+            
+            // Move the right pointer one step to the left
+            right--;
+        }
+    }
+}
