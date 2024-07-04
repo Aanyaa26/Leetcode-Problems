@@ -1,0 +1,18 @@
+class Solution {
+    public int countDigits(int num) {
+        int count =0;
+        int n= num;
+        while (n>0){
+            int last_digit = n%10;
+            if(num % last_digit==0 && last_digit!=0){
+            count = count+1;
+            }
+            else{
+                
+            }
+            n = n/10;
+        }
+        return count;
+        
+    }
+}
