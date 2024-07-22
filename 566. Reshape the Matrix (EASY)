@@ -1,0 +1,27 @@
+Date: 23.07.24
+
+class Solution {
+    public int[][] matrixReshape(int[][] mat, int r, int c) {
+       int originalRows = mat.length;       
+       int originalCols = mat[0].length; 
+       int[][] matrix = new int[r][c];
+        if (originalRows * originalCols != r * c){
+            return mat;
+        }
+        int row=0;
+        int column =0;
+        for(int i=0;i<mat.length;i++){
+            for(int j =0; j<mat[0].length; j++){
+                matrix[row][column]=mat[i][j];
+                column++;
+                if(column ==c){
+                    row++;
+                    column=0;
+                }
+                
+
+            }
+        }
+        return matrix;
+    }
+}
