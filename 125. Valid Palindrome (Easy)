@@ -1,0 +1,38 @@
+class Solution {
+
+    public boolean isAlphaNumeric(char c) {
+        return ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z'));
+    }
+
+    public boolean isPalindrome(String s) {
+        int l = 0, r = s.length()-1;
+
+        while (l <= r) {
+            char L = s.charAt(l);
+            char R = s.charAt(r);
+
+            if (L >= 'A' && L <= 'Z') {
+                L += 32;
+            }
+            if (R >= 'A' && R <= 'Z') {
+                R += 32;
+            }
+
+            if (!isAlphaNumeric(L)) {
+                l++;
+            }
+            else if (!isAlphaNumeric(R)) {
+                r--;
+            }
+            else if (L == R) {
+                l++;
+                r--;
+            }
+            else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
