@@ -5,7 +5,7 @@ Easy
         int n = height.length;
         List<Integer> ans = new ArrayList<>();
         for (int i =1; i<n; i++){
-            if(height[i-1]>threshold){
+            if(height[i-1]>threshold){ 
                 ans.add(i);
 
             }
